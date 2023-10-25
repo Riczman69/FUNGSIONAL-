@@ -1,0 +1,19 @@
+random_list = [105, 3.1, "Hello", 737, "python", 2.7, "World", 421, 5.5, "AI"]
+
+def extract_int(num):
+    ratusan = num // 100
+    puluhan = (num % 100) // 10
+    satuan = num % 10
+    return {"ratusan": ratusan, "puluhan": puluhan, "satuan": satuan}
+
+# Memisahkan data berdasarkan tipe
+integers = list(filter(lambda x: isinstance(x, int), random_list))
+floats = list(filter(lambda x: isinstance(x, float), random_list))
+strings = list(filter(lambda x: isinstance(x, str), random_list))
+
+# Menguraikan angka integer
+int_details = list(map(extract_int, integers))
+
+print("Integers :", int_details)
+print("Floats:", floats)
+print("Strings:", strings)
